@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%%= BASE_URL %%>favicon.ico">
+    <title>Mand Mobile</title>
+    <script>
+      (function (window, document) {
+        var docEl = document.documentElement;
+        var viewEl = document.querySelector('meta[name=viewport]');
+        var dpr = window.devicePixelRatio || 1;
+        var scale = 1 / dpr;
+        
+        function layout () {
+          var rem = docEl.clientWidth * 100 / 750;
+          docEl.style.fontSize = rem + 'px';
+        }
+        viewEl.setAttribute('content', 'width=device-width,initial-scale=' + scale + ',maximum-scale=' + scale + ',minimum-scale=' + scale + ',user-scalable=no');
+        layout();
+
+        window.addEventListener('resize', layout);
+        window.addEventListener('pageshow', function (e) {
+          if (e.presisted) {
+            layout();
+          }
+        });
+      })(window, document);
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
