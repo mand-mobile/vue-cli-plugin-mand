@@ -7,9 +7,7 @@ vue create <project-name>
 # after creation
 cd <project-name>
 # install
-npm install --save-dev vue-cli-plugin-mand
-# invoke
-vue invoke mand
+vue add mand
 # start
 npm run serve
 ```

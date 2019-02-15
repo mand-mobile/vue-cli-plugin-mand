@@ -1,6 +1,6 @@
 {
   "name": "vue-cli-plugin-mand",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Mand Mobile plugin for Vue CLI 3",
   "main": "index.js",
   "repository": {
