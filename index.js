@@ -1,3 +1,1 @@
-module.exports = function (api, pluginOptions) {
-  
-}
+module.exports = function (api, pluginOptions) {}

@@ -1,7 +1,7 @@
 module.exports = function (api, options) {
   api.extendPackage({
     dependencies: {
-      "mand-mobile": "^1.5.2",
+      "mand-mobile": options.version === 2 ? "^2.0.0" : "^1.6.8",
       "normalize.css": "^8.0.0"
     },
     devDependencies: {
@@ -21,7 +21,8 @@ module.exports = function (api, options) {
         "autoprefixer": {},
         "postcss-pxtorem": {
           rootValue: 100,
-          propWhiteList: []
+          propWhiteList: [],
+          minPixelValue: 2
         }
       }
     },
