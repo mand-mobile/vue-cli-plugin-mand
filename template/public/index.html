@@ -7,23 +7,25 @@
     <link rel="icon" href="<%%= BASE_URL %%>favicon.ico">
     <title>Mand Mobile</title>
     <script>
-      (function (window, document) {
-        var docEl = document.documentElement;
-        var viewEl = document.querySelector('meta[name=viewport]');
-        var dpr = window.devicePixelRatio || 1;
-        var scale = 1 / dpr;
-        
-        function layout () {
-          var rem = docEl.clientWidth * 100 / 750;
-          docEl.style.fontSize = rem + 'px';
+      (function(window, document) {
+        function resize() {
+          var ww = window.innerWidth
+          if (ww > window.screen.width) {
+            window.requestAnimationFrame(resize)
+          } else {
+            if (ww > 750) {
+              ww = 750
+            }
+            document.documentElement.style.fontSize = ww * 100 / 750 + 'px'
+          }
         }
-        viewEl.setAttribute('content', 'width=device-width,initial-scale=' + scale + ',maximum-scale=' + scale + ',minimum-scale=' + scale + ',user-scalable=no');
-        layout();
 
-        window.addEventListener('resize', layout);
+        resize();
+
+        window.addEventListener('resize', resize);
         window.addEventListener('pageshow', function (e) {
           if (e.presisted) {
-            layout();
+            resize();
           }
         });
       })(window, document);
