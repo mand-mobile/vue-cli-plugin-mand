@@ -1,13 +1,18 @@
 {
   "name": "vue-cli-plugin-mand",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Mand Mobile plugin for Vue CLI 3",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mand-mobile/vue-cli-plugin-mand.git"
   },
-  "keywords": [],
+  "keywords": [
+    "vue",
+    "mand-mobile",
+    "cli",
+    "plugin"
+  ],
   "author": "moyus <moyuboy@gmail.com>",
   "license": "Apache",
   "bugs": {
