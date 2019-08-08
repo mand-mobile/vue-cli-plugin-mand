@@ -4,7 +4,8 @@
     <p>
       A mobile UI toolkit, based on Vue.js 2, designed for financial scenarios.
     </p>
-    <md-button @click="greet">Click Me</md-button>
+    <br/>
+    <md-button type="primary" @click="greet">Click Me</md-button>
   </div>
 </template>
 
