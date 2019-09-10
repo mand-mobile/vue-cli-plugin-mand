@@ -1,8 +1,7 @@
 module.exports = function (api, options) {
   api.extendPackage({
     dependencies: {
-      'mand-mobile': options.version === 2 ? '^2.4.0' : '^1.6.8',
-      "reset.css": "^2.0.2",
+      'mand-mobile': options.version === 2 ? '^2.5.1' : '^1.6.8',
       'normalize.css': '^8.0.0'
     },
     devDependencies: {
@@ -16,7 +15,9 @@ module.exports = function (api, options) {
     }
   })
 
-  api.injectImports(api.entryFile, `import "reset.css";`)
+  if (options.theme) {
+    api.injectImports(api.entryFile, `import "mand-mobile/components/_style/global.styl";`)
+  }
   api.injectImports(api.entryFile, `import "normalize.css";`)
 
   api.render('./template')
